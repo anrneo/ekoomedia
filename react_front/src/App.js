@@ -21,7 +21,7 @@ class App extends Component {
       },
       items: [],
       list: '',
-      url: '/laravel_back/public/api',
+      url: '/laravel_back/public/api',  
       paginate: [],
       update: false,
       showItemForm :false,
