@@ -171,6 +171,7 @@ class App extends Component {
       }
     })
     if( !(Number(body['edad'])>17 && Number(body['edad'])<101) ){
+      isOk = false
       $('#edad').show()
     }else{
       $('#edad').hide()
