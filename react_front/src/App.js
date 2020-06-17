@@ -21,7 +21,7 @@ class App extends Component {
       },
       items: [],
       list: '',
-      url: '/public/api',  
+      url: (window.location.hostname == 'localhost') ? '/laravel_back/public/api' :'https://ekoomedia.herokuapp.com/public/api',  
       paginate: [],
       update: false,
       showItemForm :false,
@@ -55,8 +55,7 @@ class App extends Component {
 
   componentDidMount() {
    this.allItems()
-  
-  }
+    }
 
   
 
