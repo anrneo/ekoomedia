@@ -18,7 +18,9 @@ class CreateTasksTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
-            $table->string('avatar');
+            $table->string('nickname')->unique();
+            $table->integer('cel');
+            $table->integer('edad');
             $table->timestamps();
         });
     }

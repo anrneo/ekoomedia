@@ -14,7 +14,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return Task::paginate(5);
+        
     }
 
     /**
@@ -39,7 +39,9 @@ class TaskController extends Controller
         $task->first_name = $request->first_name;
         $task->last_name = $request->last_name;
         $task->email = $request->email;
-        $task->avatar = $request->avatar;
+        $task->nickname = $request->nickname;
+        $task->cel = $request->cel;
+        $task->edad = $request->edad;
         return $task->save();
     }
 
@@ -49,9 +51,9 @@ class TaskController extends Controller
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function show(Task $task)
+    public function show($nick)
     {
-        return ['data' =>$task];
+        return Task::where('nickname', $nick)->get();
     }
 
     /**
@@ -74,11 +76,7 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        $task->first_name = $request->first_name;
-        $task->last_name = $request->last_name;
-        $task->email = $request->email;
-        $task->avatar = $request->avatar;
-        return $task->save();
+       
     }
 
     /**
@@ -89,6 +87,6 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        return $task->delete();
+        
     }
 }
