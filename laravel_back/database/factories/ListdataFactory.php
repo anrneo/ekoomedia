@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\List;
+use App\Listdata;
 use Faker\Generator as Faker;
 
-$factory->define(List::class, function (Faker $faker) {
+$factory->define(Listdata::class, function (Faker $faker) {
     return [
         //
     ];
