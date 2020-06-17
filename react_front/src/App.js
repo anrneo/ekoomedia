@@ -170,7 +170,7 @@ class App extends Component {
         $('#'+this.id).hide()
       }
     })
-    if( !(Number(body['edad'])>0) ){
+    if( !(Number(body['edad'])>17 && Number(body['edad'])<101) ){
       $('#edad').show()
     }else{
       $('#edad').hide()
@@ -279,7 +279,7 @@ class App extends Component {
                   </div>
                   <div >
                   <label for="email">Email</label><span id="email" className="span"> * Email es requerido</span>
-                    <input name="email" value={this.state.form.email} onKeyUp={() => this.checkNickName(this.state.form.email)} type="text" placeholder="Email" onChange={this.handleChangeForm} autoFocus required/>
+                    <input name="email" value={this.state.form.email} onKeyUp={() => this.checkNickName(this.state.form.email)} onClick={() => this.checkNickName(this.state.form.email)} type="text" placeholder="Email" onChange={this.handleChangeForm} autoFocus required/>
                     
                     </div>
                   <div >
